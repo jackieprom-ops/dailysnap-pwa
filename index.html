@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>DailySnap PWA</title>
 
-  <!-- Link Manifest -->
+  <!-- PWA Manifest -->
   <link rel="manifest" href="manifest.json">
-
+  
   <!-- iOS support -->
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="DailySnap">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
 
 </head>
 <body>
   <h1>DailySnap PWA Ready</h1>
-  <p>If you see this text, deployment works!</p>
+  <p>You are now using a real PWA 🎉</p>
 
   <script src="app.js"></script>
 
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js')
-        .then(() => console.log('SW registered'))
-        .catch(err => console.log('SW failed', err));
+      navigator.serviceWorker.register('./sw.js');
     }
   </script>
 </body>
